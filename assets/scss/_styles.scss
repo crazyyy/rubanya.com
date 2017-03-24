@@ -1,0 +1,108 @@
+.wpbdp-listing {
+  .listing-title {
+    border: none;
+    border-bottom: 1px solid #044F8D;
+    margin-bottom: 8px;
+    background: inherit;
+  }
+
+  a {
+    color: #62CAF4;
+    text-decoration: none;
+    border-bottom: 1px solid #F3F3F3;
+  }
+
+  .listing-thumbnail {
+    float: left;
+  }
+
+  .listing-details {
+    margin-left: 160px;
+  }
+
+  .listing-title {
+    a, h2 {
+      color: #044f8d;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 115%;
+    }
+  }
+
+  .address-info label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .wpbdp-field {
+    margin: 4px 0;
+  }
+
+  .wpbdp-field-type-textarea label {
+    display: block;
+  }
+
+  .listing-actions {
+    text-align: right;
+    z-index: 100;
+    border: 1px solid #ff0000;
+    background: #fff;
+    padding: .2em .8em;
+  }
+}
+
+span {
+  &.wpcf7-list-item {
+    display: inline-block;
+    margin: 0 0 0 1em;
+  }
+
+  &.wpcf7-list-item-label {
+    &::before, &::after {
+      content: " ";
+    }
+  }
+}
+
+.wpcf7-display-none {
+  display: none;
+}
+
+div.wpcf7 {
+  .ajax-loader {
+    visibility: hidden;
+    display: inline-block;
+    background-image: url('../img/ajax-loader.gif');
+    width: 16px;
+    height: 16px;
+    border: none;
+    padding: 0;
+    margin: 0 0 0 4px;
+    vertical-align: middle;
+
+    &.is-active {
+      visibility: visible;
+    }
+  }
+
+  div.ajax-error {
+    display: none;
+  }
+
+  .placeheld {
+    color: #888;
+  }
+
+  .wpcf7-recaptcha iframe {
+    margin-bottom: 0;
+  }
+
+  input[type="file"] {
+    cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+}

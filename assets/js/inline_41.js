@@ -1,0 +1,20 @@
+
+yandex_partner_id = 185255;
+yandex_site_bg_color = 'FFFFFF';
+yandex_stat_id = 3;
+yandex_ad_format = 'direct';
+yandex_direct_type = 'posterVertical';
+yandex_direct_border_type = 'block';
+yandex_direct_limit = 1;
+yandex_direct_title_font_size = 3;
+yandex_direct_border_radius = true;
+yandex_direct_links_underline = true;
+yandex_direct_border_color = 'FBE5C0';
+yandex_direct_title_color = '990000';
+yandex_direct_url_color = '676767';
+yandex_direct_text_color = '000000';
+yandex_direct_hover_color = 'cc0000';
+yandex_direct_sitelinks_color = '676767';
+yandex_direct_favicon = true;
+yandex_no_sitelinks = false;
+document.write('<scr'+'ipt type="text/javascript" src="//an.yandex.ru/system/context.js"></scr'+'ipt>');

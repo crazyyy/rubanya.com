@@ -1,0 +1,73 @@
+/* General Menu Styles */
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  line-height: 100%;
+}
+
+.js .menu {
+  /* If we have JavaScript enabled and we're just waiting for flexMenu to load and run, hide list items that don't fit on one line. If JavaScript is not enabled, just show 'em all. */
+  height: 1.5em;
+  overflow: hidden;
+}
+
+.menu > li {
+  margin: 0 0 0 1.5em;
+  float: left;
+
+  /*height: 2em;*/
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.flex-multi {
+  float: left;
+  width: 45%;
+  margin-bottom: 100px;
+
+  + .flex-multi {
+    float: right;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+/* flexMenu styles */
+
+.flexMenu-viewMore {
+  > a {
+    display: block;
+  }
+
+  &.active > a, > a:hover {}
+}
+
+.flexMenu-popup {
+  list-style-type: none;
+  padding: 0;
+  background-color: #86574E;
+  margin: 10px 0;
+  z-index: 2000;
+
+  li {
+    display: block !important;
+    float: none !important;
+  }
+}
+
+.lt-ie8 .flexMenu-popup {}
+
+.flexMenu-popup a {
+  display: block;
+  padding: 5px;
+
+  &:hover {
+    color: #fff;
+    display: block;
+  }
+}
