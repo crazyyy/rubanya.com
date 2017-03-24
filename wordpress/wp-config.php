@@ -1,13 +1,7 @@
 <?php
-define("WP_CACHE", false);
-define('WP_POST_REVISIONS', 3);
 
 define('DB_NAME', 'cs63024_7');
-
-/** MySQL database username */
 define('DB_USER', 'cs63024_7');
-
-/** MySQL database password */
 define('DB_PASSWORD', 'S81546Rc');
 
 /** MySQL hostname */
@@ -15,6 +9,7 @@ define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
+define('WP_POST_REVISIONS', 3);
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
