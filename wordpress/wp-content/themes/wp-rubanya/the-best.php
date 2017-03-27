@@ -11,6 +11,7 @@
           else: ?>
             <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
           <?php endif; ?>
+          <span><?php the_title(); ?></span>
         </a><!-- /post thumbnail -->
         <?php wpeExcerpt('wpeExcerpt10'); ?>
       </div>
