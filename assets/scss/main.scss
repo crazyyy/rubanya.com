@@ -64,6 +64,11 @@
   width: 295px;
   height: 192px;
 }
+.homepage-tow {
+  .step-title {
+    margin-top: 0 !important;
+  }
+}
 .pagination {
   text-align: center;
   span,
@@ -74,11 +79,11 @@
   }
 }
 .category .homepage-content .cat-img {
+  overflow: hidden;
   img {
     width: 100%;
     min-height: 100%;
   }
-  overflow: hidden;
 }
 .widget {
   &.popular {
@@ -86,4 +91,77 @@
       padding: 0;
     }
   }
+}
+
+.article-homer {
+  .home-article-img-span {
+    display: inline-block;
+    float: left;
+
+    width: 93px;
+    height: 93px;
+    margin-right: 2%;
+    margin-bottom: 10px;
+
+    vertical-align: top;
+
+    border-radius: 4px;
+    img {
+      width: 100%;
+      max-width: 100% !important;
+      height: 100%;
+      margin: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+  p,
+  .h2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+.homepage {
+  .video {
+    .item {
+      img {
+        width: 220px;
+        height: 255px;
+      }
+    }
+  }
+}
+.homepage .the-best .item {
+  overflow: hidden;
+
+  height: 295px !important;
+  a {
+    width: 95%;
+  }
+  img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.aside .section .calc-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.post table input[type='button'] {
+  font-size: 16px;
+  font-weight: 700;
+
+  margin: 20px auto;
+  padding: 12px 25px;
+
+  cursor: pointer;
+
+  color: #fff;
+  border: 0 none;
+  border-radius: 7px;
+  background-color: #5f454f;
 }

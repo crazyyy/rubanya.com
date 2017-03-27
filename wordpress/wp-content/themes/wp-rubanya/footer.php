@@ -66,7 +66,6 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/suggest.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/mouse.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/slider.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/public-min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.pack.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sonar.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/lazy-load.js"></script>

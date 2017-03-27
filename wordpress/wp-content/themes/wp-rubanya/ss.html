@@ -1,0 +1,107 @@
+<form name="form" class="calculator  calculator4">
+  <table style="width: 500px; margin: auto;">
+    <tbody>
+      <tr>
+        <td colspan="2" class="title">Размеры будущего строения</td>
+      </tr>
+      <tr>
+        <td>Периметр, метров</td>
+        <td>
+          <input id="lenght" value="120" class="calculator__field" size="10" type="text" onfocus="if (this.value=="120") this.value="";" onblur="if (this.value=="") this.value="120";">
+        </td>
+      </tr>
+      <tr>
+        <td>Высота, метров</td>
+        <td>
+          <input id="bott" value="3.5" class="calculator__field" size="10" type="text" onfocus="if (this.value=="3.5") this.value="";" onblur="if (this.value=="") this.value="3.5";">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="title">Архитектурные особенности</td>
+      </tr>
+      <tr>
+        <td>Количество внешних дверей, штук</td>
+        <td>
+          <input id="kolvo_dver" value="1" class="calculator__field" size="10" type="text" onfocus="if (this.value=="1") this.value="";" onblur="if (this.value=="") this.value="1";">
+        </td>
+      </tr>
+      <tr>
+        <td>Ширина одной двери, метров</td>
+        <td>
+          <input id="width_dver" value="1.5" class="calculator__field" size="10" type="text" onfocus="if (this.value=="1.5") this.value="";" onblur="if (this.value=="") this.value="1.5";">
+        </td>
+      </tr>
+      <tr>
+        <td>Высота одной двери, метров</td>
+        <td>
+          <input id="bott_dver" value="2" class="calculator__field" size="10" type="text" onfocus="if (this.value=="2") this.value="";" onblur="if (this.value=="") this.value="2";">
+        </td>
+      </tr>
+      <tr>
+        <td>Количество окон, штук</td>
+        <td>
+          <input id="kolvo_okon" value="5" class="calculator__field" size="10" type="text" onfocus="if (this.value=="5") this.value="";" onblur="if (this.value=="") this.value="5";">
+        </td>
+      </tr>
+      <tr>
+        <td>Ширина одного окна, метров</td>
+        <td>
+          <input id="width_okon" value="1" class="calculator__field" size="10" type="text" onfocus="if (this.value=="1") this.value="";" onblur="if (this.value=="") this.value="1";">
+        </td>
+      </tr>
+      <tr>
+        <td>Высота одног окна, метров</td>
+        <td>
+          <input id="bott_okon" value="1.2" class="calculator__field" size="10" type="text" onfocus="if (this.value=="1.2") this.value="";" onblur="if (this.value=="") this.value="1.2";">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="title">Особенности кладки</td>
+      </tr>
+      <tr>
+        <td>Вид кладки</td>
+        <td>
+          <select id="brick" style="width: 200px; position: absolute; left: -9999px;">
+            <option value="1">Кирпич одинарный щелевой</option>
+            <option value="2">Кирпич утолщенный щелевой (полуторный)</option>
+            <option value="3">Кирпич двойной, поризованный 2,1 NF</option>
+            <option value="4">Блок керамический поризованный 4,5NF</option>
+            <option value="5">Блок керамический поризованный 9 NF</option>
+            <option value="6">Блок керамический поризованный 10,7 NF</option>
+            <option value="7">Блок керамический поризованный 14,3 NF</option>
+            <option value="8">Кирпич полнотелый одинарный</option>
+            <option value="9">Кирпич лицевой пустотелый одинарный</option>
+            <option value="10">Кирпич лицевой пустотелый утолщенный</option>
+            <option value="11">Блок газосиликатный 19*29*59</option>
+            <option value="12">Блок газосиликатный 20*29*59</option>
+            <option value="13">Блок газосиликатный 40*25*60</option>
+            <option value="14">Керамзитобетонные блоки</option>
+            <option value="15">Керамзитобетонные перегородка</option>
+          </select><span id="brick-styler" class="jq-selectbox jqselect" style="display: inline-block; position: relative; z-index:100"><div class="jq-selectbox__select"><div class="jq-selectbox__select-text">Кирпич одинарный щелевой</div><div class="jq-selectbox__trigger"><div class="jq-selectbox__trigger-arrow"></div></div></div><div class="jq-selectbox__dropdown" style="position: absolute; overflow-y: auto; overflow-x: hidden; display: none;"><ul style="list-style: none"><li class="selected sel">Кирпич одинарный щелевой</li><li class="">Кирпич утолщенный щелевой (полуторный)</li><li class="">Кирпич двойной, поризованный 2,1 NF</li><li class="">Блок керамический поризованный 4,5NF</li><li class="">Блок керамический поризованный 9 NF</li><li class="">Блок керамический поризованный 10,7 NF</li><li class="">Блок керамический поризованный 14,3 NF</li><li class="">Кирпич полнотелый одинарный</li><li class="">Кирпич лицевой пустотелый одинарный</li><li class="">Кирпич лицевой пустотелый утолщенный</li><li class="">Блок газосиликатный 19*29*59</li><li class="">Блок газосиликатный 20*29*59</li><li class="">Блок газосиликатный 40*25*60</li><li class="">Керамзитобетонные блоки</li><li class="">Керамзитобетонные перегородка</li></ul></div></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Толщина кладки (м)</td>
+        <td>
+          <input id="tol_klad" value="0.24" class="calculator__field" size="10" type="text" onfocus="if (this.value=="0.24") this.value="";" onblur="if (this.value=="") this.value="0.24";">
+        </td>
+      </tr>
+      <tr>
+        <td>Толщина шва (раствора) (м)</td>
+        <td>
+          <input id="tol_shva" value="0.01" class="calculator__field" size="10" type="text" onfocus="if (this.value=="0.01") this.value="";" onblur="if (this.value=="") this.value="0.01";">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="center">
+          <input value="Рассчитать" onclick="Calc()" type="button" class="calculator__button">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" id="my_color">
+          <div id="xkirp"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>

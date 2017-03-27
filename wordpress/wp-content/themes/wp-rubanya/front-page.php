@@ -20,7 +20,7 @@
 
 
   <div class="content">
-    <div class="homepage">
+    <div class="homepage homepage-tow">
 
     <div class="step-title" style="margin-top: 35px;">Пошаговый календарь строительства бани с нуля <span>▲</span></div>
     <ul class="step-by-step" style="display: block;">
@@ -149,71 +149,34 @@
 
     <div class="content-title" style="margin-top: 20px;">Новые статьи на портале</div>
     <div class="section">
-      <div class="article">
-        <img class="home-article-img" src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2017/03/Газобетон.jpg&amp;w=100&amp;h=100&amp;zc=1&amp;q=80" width="100" height="100" alt="Баня из газобетона">
-        <div class="item home-article-item">
-          <p class="h2"><a class="title" href="http://banya-expert.com/bani-mira/banya-iz-gazobetona.html" rel="bookmark">Баня из газобетона</a></p>
-          <div class="post">
-            <p>Издавна бани строили из дерева. И не удивительно, ведь древесина была самым…</p>
-          </div>
-          <div class="meta">
-            <span id="meta-cat"><a href="http://banya-expert.com/category/bani-mira" rel="category tag">Бани мира</a></span>
-            <span id="meta-comments"><a href="http://banya-expert.com/bani-mira/banya-iz-gazobetona.html#respond">0</a></span>
-          </div>
-        </div>
-      </div>
-      <div class="article">
-        <img class="home-article-img" src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2017/03/Отделка-бани-изнутри.jpg&amp;w=100&amp;h=100&amp;zc=1&amp;q=80" width="100" height="100" alt="Отделка бани изнутри">
-        <div class="item home-article-item">
-          <p class="h2"><a class="title" href="http://banya-expert.com/otdelka-i-interier/otdelka-bani-iznutri.html" rel="bookmark">Отделка бани изнутри</a></p>
-          <div class="post">
-            <p>Построить баню – только половина дела. Важно правильно обустроить ее изнутри: выполнить…</p>
-          </div>
-          <div class="meta">
-            <span id="meta-cat"><a href="http://banya-expert.com/category/otdelka-i-interier" rel="category tag">Отделка и интерьер</a></span>
-            <span id="meta-comments"><a href="http://banya-expert.com/otdelka-i-interier/otdelka-bani-iznutri.html#respond">0</a></span>
-          </div>
-        </div>
-      </div>
-      <div class="article">
-        <img class="home-article-img" src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2017/02/Классическая-баня-по-черному-во-время-топки.jpg&amp;w=100&amp;h=100&amp;zc=1&amp;q=80" width="100" height="100" alt="Устройство дымохода в бане для дровяной печи">
-        <div class="item home-article-item">
-          <p class="h2"><a class="title" href="http://banya-expert.com/pechi/ustrojstvo-dymoxoda-v-bane-dlya-drovyanoj-pechi.html" rel="bookmark">Устройство дымохода в бане для дровяной печи</a></p>
-          <div class="post">
-            <p>Когда-то давно бани строились исключительно «по-черному». Печь устанавливали в парной, из этого…</p>
-          </div>
-          <div class="meta">
-            <span id="meta-cat"><a href="http://banya-expert.com/category/pechi" rel="category tag">Все про печи и дымоходы</a></span>
-            <span id="meta-comments"><a href="http://banya-expert.com/pechi/ustrojstvo-dymoxoda-v-bane-dlya-drovyanoj-pechi.html#respond">0</a></span>
+
+      <?php query_posts("showposts=5&cat=2"); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        <div class="article article-homer">
+          <span class="home-article-img-span">
+            <?php if ( has_post_thumbnail()) :
+              the_post_thumbnail('medium');
+            else: ?>
+              <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+            <?php endif; ?>
+          </span>
+
+          <div class="item home-article-item">
+            <p class="h2"><a class="title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
+            <div class="post">
+              <?php wpeExcerpt('wpeExcerpt10'); ?>
+            </div>
+            <div class="meta">
+              <span id="meta-cat"><?php the_category(', ');  ?></span>
+              <span id="meta-comments"><?php comments_popup_link( __( '0', 'wpeasy' ), __( '1', 'wpeasy' ), __( '%', 'wpeasy' )); ?></span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="article">
-        <img class="home-article-img" src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2016/12/в.jpg&amp;w=100&amp;h=100&amp;zc=1&amp;q=80" width="100" height="100" alt="Оптимальные размеры бани">
-        <div class="item home-article-item">
-          <p class="h2"><a class="title" href="http://banya-expert.com/proekti-ban/optimalnye-razmery-bani.html" rel="bookmark">Оптимальные размеры бани</a></p>
-          <div class="post">
-            <p>Первый этап подготовки к строительству бани или сауны – создание проекта, который…</p>
-          </div>
-          <div class="meta">
-            <span id="meta-cat"><a href="http://banya-expert.com/category/proekti-ban" rel="category tag">Проекты бань</a></span>
-            <span id="meta-comments"><a href="http://banya-expert.com/proekti-ban/optimalnye-razmery-bani.html#respond">0</a></span>
-          </div>
-        </div>
-      </div>
-      <div class="article">
-        <img class="home-article-img" src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2016/12/sXlrVuOMAbiCkNZa.jpg&amp;w=100&amp;h=100&amp;zc=1&amp;q=80" width="100" height="100" alt="Как установить печь в бане">
-        <div class="item home-article-item">
-          <p class="h2"><a class="title" href="http://banya-expert.com/pechi/kak-ustanovit-pech-v-bane.html" rel="bookmark">Как установить печь в бане</a></p>
-          <div class="post">
-            <p>Металлические печи для бани находятся на пике популярности. Существует множество электрических и…</p>
-          </div>
-          <div class="meta">
-            <span id="meta-cat"><a href="http://banya-expert.com/category/pechi" rel="category tag">Все про печи и дымоходы</a></span>
-            <span id="meta-comments"><a href="http://banya-expert.com/pechi/kak-ustanovit-pech-v-bane.html#respond">0</a></span>
-          </div>
-        </div>
-      </div>
+
+      <?php endwhile; endif; ?>
+      <?php wp_reset_query(); ?>
+
     </div>
     <script type="text/javascript">
     $('#close').click(function() {
@@ -224,98 +187,39 @@
 
     <div class="content-title">Видео советы из нашей коллекции</div>
     <div class="video section">
-      <a href="http://banya-expert.com/bani-mira/banya-iz-gazobetona.html#video-content" rel="bookmark" class="item">
-        <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://img.youtube.com/vi/xssnBHtUbRE/mqdefault.jpg&amp;w=220&amp;h=255&amp;zc=1&amp;q=80" width="220" height="255" alt="Баня из газобетона">
+      <?php query_posts("showposts=3&cat=2"); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+      <a href="<?php the_permalink(); ?>" rel="bookmark" class="item">
+        <?php if ( has_post_thumbnail()) :
+          the_post_thumbnail('medium');
+        else: ?>
+          <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+        <?php endif; ?>
         <i class="video-play"></i>
-        <span class="title">Баня из газобетона</span>
+        <span class="title"><?php the_title(); ?></span>
       </a>
-      <a href="http://banya-expert.com/otdelka-i-interier/otdelka-bani-iznutri.html#video-content" rel="bookmark" class="item">
-        <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://img.youtube.com/vi/pBWW2Zzb0-8/mqdefault.jpg&amp;w=220&amp;h=255&amp;zc=1&amp;q=80" width="220" height="255" alt="Отделка бани изнутри">
-        <i class="video-play"></i>
-        <span class="title">Отделка бани изнутри</span>
-      </a>
-      <a href="http://banya-expert.com/pechi/ustrojstvo-dymoxoda-v-bane-dlya-drovyanoj-pechi.html#video-content" rel="bookmark" class="item">
-        <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://img.youtube.com/vi/dO2g0ID15Bc/mqdefault.jpg&amp;w=220&amp;h=255&amp;zc=1&amp;q=80" width="220" height="255" alt="Устройство дымохода в бане для дровяной печи">
-        <i class="video-play"></i>
-        <span class="title">Устройство дымохода в бане для дровяной печи</span>
-      </a>
+      <?php endwhile; endif; ?>
+      <?php wp_reset_query(); ?>
       <a class="cat-url" href="/video">Смотреть все видео</a>
     </div>
 
     <div class="content-title">Бани мира</div>
     <div class="section the-best">
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2017/03/Газобетон.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Баня из газобетона">
-          <a class="title" href="http://banya-expert.com/bani-mira/banya-iz-gazobetona.html" rel="bookmark">Баня из газобетона</a>
+      <?php query_posts("showposts=9&cat=2"); ?>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <div class="item">
+          <div class="rest">
+            <?php if ( has_post_thumbnail()) :
+              the_post_thumbnail('medium');
+            else: ?>
+              <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+            <?php endif; ?>
+            <a class="title" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+          </div>
         </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2016/11/Latlaft-1024x639.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Норвежская рубка. Дома и бани из лафета">
-          <a class="title" href="http://banya-expert.com/bani-mira/norvezhskaya-rubka-doma-i-bani-iz-lafeta.html" rel="bookmark">Норвежская рубка. Дома и бани из лафета</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/12/Баня-по-финской-технологии-1024x678.png&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Баня по финской технологии">
-          <a class="title" href="http://banya-expert.com/bani-mira/banya-po-finskoj-texnologii.html" rel="bookmark">Баня по финской технологии</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/12/Японские-бани-фурако-офуро-1024x924.png&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Японские бани, фурако, офуро">
-          <a class="title" href="http://banya-expert.com/bani-mira/yaponskie-bani-furako-ofuro.html" rel="bookmark">Японские бани, фурако, офуро</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/12/114.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Русская баня Маслова">
-          <a class="title" href="http://banya-expert.com/bani-mira/russkaya-banya-maslova.html" rel="bookmark">Русская баня Маслова</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/10/фото-110.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Купель из пластика">
-          <a class="title" href="http://banya-expert.com/bani-mira/kupel-iz-plastika.html" rel="bookmark">Купель из пластика</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/10/фото-13.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Купель для бани своими руками">
-          <a class="title" href="http://banya-expert.com/bani-mira/kupel-dlya-bani-svoimi-rukami.html" rel="bookmark">Купель для бани своими руками</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/10/Перевозная-мобильная-миниатюрная-баня.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Перевозные мобильные бани">
-          <a class="title" href="http://banya-expert.com/bani-mira/perevoznye-mobilnye-bani.html" rel="bookmark">Перевозные мобильные бани</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/10/Инфракрасная-сауна.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Инфракрасная сауна польза и вред">
-          <a class="title" href="http://banya-expert.com/bani-mira/infrakrasnaya-sauna-polza-i-vred.html" rel="bookmark">Инфракрасная сауна польза и вред</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/10/210.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Походная баня своими руками">
-          <a class="title" href="http://banya-expert.com/bani-mira/poxodnaya-banya-svoimi-rukami.html" rel="bookmark">Походная баня своими руками</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/09/Хаммам-на-даче.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Хаммам на даче">
-          <a class="title" href="http://banya-expert.com/bani-mira/xammam-na-dache.html" rel="bookmark">Хаммам на даче</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="rest">
-          <img src="http://banya-expert.com/wp-content/themes/septik/scripts/timthumb.php?src=http://banya-expert.com/wp-content/uploads/2015/09/Построить-баню-из-пеноблоков-своими-руками.jpg&amp;w=180&amp;h=180&amp;zc=1&amp;q=80" width="180" height="180" alt="Построить баню из пеноблоков своими руками">
-          <a class="title" href="http://banya-expert.com/bani-mira/postroit-banyu-iz-penoblokov-svoimi-rukami.html" rel="bookmark">Построить баню из пеноблоков своими руками</a>
-        </div>
-      </div>
+      <?php endwhile; endif; ?>
+      <?php wp_reset_query(); ?>
+
     </div>
 
     <div class="homepage-content"></div>
