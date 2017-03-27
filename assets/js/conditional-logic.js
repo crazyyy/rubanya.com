@@ -1,123 +1,123 @@
 (function($) {
 
-    var conditional_logic = {
+  var conditional_logic = {
 
-        init: function() {
+    init: function() {
 
-            var _this = this;
-            _this.change();
+      var _this = this;
+      _this.change();
 
-            // events
-            $(document).on( 'change', '.wpuf-fields input, .wpuf-fields textarea, .wpuf-fields select', function(){
-                _this.change();
-            });
-        },
+      // events
+      $(document).on('change', '.wpuf-fields input, .wpuf-fields textarea, .wpuf-fields select', function() {
+        _this.change();
+      });
+    },
 
-        change: function() {
+    change: function() {
 
-            var cond_field_val = [],
-                all = [],
-                prefix = 'wpuf_';
+      var cond_field_val = [],
+        all = [],
+        prefix = 'wpuf_';
 
-            if ( typeof wpuf_conditional_items === 'undefined' ) {
-                return;
+      if (typeof wpuf_conditional_items === 'undefined') {
+        return;
+      }
+
+      $.each(wpuf_conditional_items, function(k, item) {
+
+        $.each(item.cond_field, function(key, value) {
+
+          var form_id = '_' + item.form_id,
+            selector = '.' + prefix + value + form_id,
+            value = item.cond_option[key],
+            operator = (item.cond_operator[key] == '=') ? true : false,
+            select = $('select' + selector),
+            checkbox = $('input[type=checkbox][value="' + value + '"]' + selector),
+            radio = $('input[type=radio][value="' + value + '"]' + selector),
+            select = $('select' + selector + '>option[value="' + value + '"]');
+
+
+          if (select.length) {
+
+            var select_selectd_status = select.is(':selected') ? true : false;
+
+            if (operator && select_selectd_status) {
+              all[key] = true;
+
+            } else if (operator === false && select_selectd_status === false) {
+              all[key] = true;
+
+            } else {
+              all[key] = false;
             }
+          }
 
-            $.each( wpuf_conditional_items, function( k, item ) {
+          if (radio.length) {
 
-                $.each( item.cond_field, function( key, value ) {
+            var radio_checked_status = radio.is(':checked') ? true : false;
 
-                    var form_id     = '_'+item.form_id,
-                        selector    = '.'+prefix+value+form_id,
-                        value       = item.cond_option[key],
-                        operator    = ( item.cond_operator[key] == '=' ) ? true : false,
-                        select      = $('select'+selector),
-                        checkbox    = $('input[type=checkbox][value="'+value+'"]'+selector ),
-                        radio       = $('input[type=radio][value="'+value+'"]'+selector),
-                        select      = $('select'+selector+'>option[value="'+value+'"]');
+            if (operator && radio_checked_status) {
 
+              all[key] = true;
 
-                    if ( select.length ) {
+            } else if (operator === false && radio_checked_status === false) {
 
-                        var select_selectd_status = select.is(':selected') ? true : false;
+              all[key] = true;
 
-                        if ( operator && select_selectd_status  ) {
-                            all[key] = true;
+            } else {
+              all[key] = false;
+            }
+          }
 
-                        } else if ( operator === false && select_selectd_status === false ) {
-                            all[key] = true;
+          if (checkbox.length) {
 
-                        } else {
-                            all[key] = false;
-                        }
-                    }
+            var checkbox_checked_status = checkbox.is(':checked') ? true : false;
 
-                    if ( radio.length ) {
+            if (operator && checkbox_checked_status) {
+              all[key] = true;
 
-                        var radio_checked_status = radio.is(':checked') ? true : false;
+            } else if (operator === false && checkbox_checked_status === false) {
+              all[key] = true;
 
-                        if ( operator && radio_checked_status  ) {
+            } else {
+              all[key] = false;
+            }
+          }
+        });
 
-                            all[key] = true;
+        if (item.cond_logic == 'any') {
 
-                        } else if ( operator === false && radio_checked_status === false ) {
+          var check = all.indexOf(true);
 
-                            all[key] = true;
+          if (check != '-1') {
 
-                        } else {
-                            all[key] = false;
-                        }
-                    }
+            $('.' + prefix + item.name + '_' + item.form_id).closest('li').show();
 
-                    if ( checkbox.length ) {
+          } else {
 
-                        var checkbox_checked_status = checkbox.is(':checked') ? true : false;
+            $('.' + prefix + item.name + '_' + item.form_id).closest('li').hide();
 
-                        if( operator && checkbox_checked_status  ) {
-                            all[key] = true;
+          }
 
-                        } else if ( operator === false && checkbox_checked_status === false ) {
-                            all[key] = true;
+        } else {
 
-                        } else {
-                            all[key] = false;
-                        }
-                    }
-                });
+          var check = all.indexOf(false);
 
-                if ( item.cond_logic == 'any') {
+          if (check == '-1') {
 
-                    var check = all.indexOf( true );
+            $('.' + prefix + item.name + '_' + item.form_id).closest('li').show();
 
-                    if ( check != '-1') {
+          } else {
 
-                        $( '.' + prefix + item.name + '_' + item.form_id).closest('li').show();
+            $('.' + prefix + item.name + '_' + item.form_id).closest('li').hide();
+          }
 
-                    } else {
-
-                        $( '.' + prefix + item.name + '_' + item.form_id).closest('li').hide();
-
-                    }
-
-                } else {
-
-                    var check = all.indexOf( false );
-
-                    if ( check == '-1') {
-
-                        $( '.' + prefix + item.name + '_' + item.form_id).closest('li').show();
-
-                    } else {
-
-                        $( '.' + prefix+item.name + '_' + item.form_id).closest('li').hide();
-                    }
-
-                }
-
-                all.length = 0;
-            });
         }
-    }
 
-    conditional_logic.init();
+        all.length = 0;
+      });
+    }
+  }
+
+  conditional_logic.init();
 })(jQuery);

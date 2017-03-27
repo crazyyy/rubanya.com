@@ -22,3 +22,27 @@
 @import 'inline_2';
 @import 'inline_3';
 @import 'inline_4';
+
+.header .single-menu .menu {
+  height: 50px;
+}
+.content {
+  padding-top: 20px;
+}
+.breadcrumbs {
+  margin: 0 0 20px;
+  padding: 0;
+
+  list-style: none;
+  li {
+    display: inline-block;
+
+    margin-right: 6px;
+  }
+}
+.single-title .post-category a {
+  padding: 1px 15px;
+}
+#reply-title {
+  display: none;
+}

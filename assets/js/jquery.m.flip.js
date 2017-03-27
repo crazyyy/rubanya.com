@@ -8,45 +8,45 @@
  * Copyright 2015 Manu Morante - www.manumorante.com
  *
  */
-(function($){
+(function($) {
 
-  var isTouch   = document.createTouch !== undefined,
-    evt_hover = (isTouch)? 'touchstart' : 'mouseover',
-    evt_out   = (isTouch)? 'touchend'   : 'mouseout';
+  var isTouch = document.createTouch !== undefined,
+    evt_hover = (isTouch) ? 'touchstart' : 'mouseover',
+    evt_out = (isTouch) ? 'touchend' : 'mouseout';
 
 
   $.fn.extend({
-    mflip: function(){
-      return this.each(function(){
+    mflip: function() {
+      return this.each(function() {
 
         var $f = $(this),
           $c,
           rotation = $f.data('rotation');
 
-        $f.html('<div class="m-flip__content">'+ $f.html() +'</div>');
+        $f.html('<div class="m-flip__content">' + $f.html() + '</div>');
         $c = $('.m-flip__content', $f);
 
         // Event: Rollover / Touchstart
-        $f.bind(evt_hover, function(){
+        $f.bind(evt_hover, function() {
 
-          if( isNaN(rotation) ){
+          if (isNaN(rotation)) {
             $c.addClass('active');
 
           } else {
             $c.css({
-              '-webkit-transform': 'rotateY('+ rotation +'deg)',
-              '-moz-transform': 'rotateY('+ rotation +'deg)',
-              'transform': 'rotateY('+ rotation +'deg)'
+              '-webkit-transform': 'rotateY(' + rotation + 'deg)',
+              '-moz-transform': 'rotateY(' + rotation + 'deg)',
+              'transform': 'rotateY(' + rotation + 'deg)'
             });
           }
 
           // Event: Rollout / Touchend
-        }).bind(evt_out, function(){
+        }).bind(evt_out, function() {
 
-          if( isNaN(rotation) ){
+          if (isNaN(rotation)) {
             $c.removeClass('active');
 
-          }else{
+          } else {
             $c.css({
               '-webkit-transform': 'rotateY(0deg)',
               '-moz-transform': 'rotateY(0deg)',

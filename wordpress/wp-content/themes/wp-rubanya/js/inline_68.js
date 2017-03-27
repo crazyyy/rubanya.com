@@ -1,0 +1,2 @@
+$(".category .homepage-content b").prependTo(".cat-img"),$(".cat-desk").append('<i class="cat-more">Читать дальше</i>');var count=0;$("i.cat-more").click(function(){0==count?($(this).text("Скрыть"),$(".cat-desk p").slideDown(),count=1):($(this).text("Читать дальше"),$(".cat-desk p").slideUp(),count=0)});var top_show=150,delay=400;$(window).scroll(function(){$(this).scrollTop()>top_show?$("#top").fadeIn():$("#top").fadeOut()}),$("#top").click(function(){$("body, html").animate({scrollTop:0},delay)});
+//# sourceMappingURL=maps/inline_68.js.map

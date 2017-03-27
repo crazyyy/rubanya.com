@@ -1,0 +1,2 @@
+!function(e,t,n,a,r){e[n]=e[n]||[],e[n].push(function(){Ya.Context.AdvManager.render({blockId:"R-A-185255-2",renderTo:"yandex_rtb_R-A-185255-2",horizontalAlign:!1,async:!0})}),r=t.getElementsByTagName("script")[0],a=t.createElement("script"),a.type="text/javascript",a.src="//an.yandex.ru/system/context.js",a.async=!0,r.parentNode.insertBefore(a,r)}(this,this.document,"yandexContextAsyncCallbacks");
+//# sourceMappingURL=maps/inline_40.js.map

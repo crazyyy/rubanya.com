@@ -1,0 +1,2 @@
+document.write("<a rel='nofollow' href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t39.6;r"+escape(document.referrer)+("undefined"==typeof screen?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random()+"' alt='' title='LiveInternet' border='0' width='31' height='31'></a>");
+//# sourceMappingURL=maps/inline_42.js.map

@@ -87,7 +87,8 @@ if (function_exists('add_theme_support')) {
   add_image_size('large', 1200, '', true); // Large Thumbnail
   add_image_size('medium', 600, '', true); // Medium Thumbnail
   add_image_size('small', 250, '', true); // Small Thumbnail
-  add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+  add_image_size('single-thumb', 400, 230, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+  add_image_size('related-thumb', 300, 180, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
   // Enables post and comment RSS feed links to head
   add_theme_support('automatic-feed-links');
@@ -113,7 +114,7 @@ function wpeHeadNav() {
     'after'           => '',
     'link_before'     => '',
     'link_after'      => '',
-    'items_wrap'      => '<ul class="headnav">%3$s</ul>',
+    'items_wrap'      => '<ul id="menu-verxnee" class="menu flex">%3$s</ul>',
     'depth'           => 0,
     'walker'          => ''
     )
@@ -230,13 +231,13 @@ function wpeExcerpt($length_callback = '', $more_callback = '') {
 
 //  Custom View Article link to Post
 //  RU: Добавляем "Читать дальше" к обрезанным записям
-/*
+
 function html5_blank_view_article($more) {
   global $post;
-  return '... <!-- noindex --><a rel="nofollow" class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'wpeasy') . '</a><!-- /noindex -->';
+  return '...';
 }
 add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-*/
+
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 function my_wp_nav_menu_args($args = '') {
@@ -748,8 +749,30 @@ function disable_emojicons_tinymce( $plugins ) {
   }
 }
 
-
-
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0";
+    }
+    return $count.'';
+}
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+// Remove issues with prefetching adding extra views
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 
 

@@ -20,28 +20,25 @@
   <!-- css + javascript -->
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-<!-- wrapper -->
-<div class="wrapper">
-  <header role="banner">
-    <div class="inner">
+<body <?php /* body_class(); */?>>
 
-      <div class="logo">
-        <?php if ( !is_front_page() && !is_home() ){ ?>
-          <a href="<?php echo home_url(); ?>">
-        <?php } ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
-        <?php if ( !is_front_page() && !is_home() ){ ?>
-          </a>
-        <?php } ?>
-      </div><!-- /logo -->
-
-      <nav class="nav" role="navigation">
+  <div class="contener">
+    <div class="header">
+      <div class="header-top">
+        <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" width="300" height="50"></a>
+        <div class="header-desc"><?php wp_title( '' ); ?></div>
+        <div class="search">
+          <form id="searchform" method="get" action="<?php echo home_url(); ?>" role="search">
+            <input class="searchfield" type="text" name="s" id="s" title="Введите запрос для поиска" value="Поиск на портале" onclick="javascript:if(value==" Поиск на портале "){value=" "}" onblur="javascript:if(value==" "){value="Поиск на портале "}">
+            <input name="sbutt" type="submit" value="Найти" alt="Искать" class="searchsubmit">
+          </form>
+        </div>
+        <a onclick="return add_favorite(this);" class="favorite" href="#"></a>
+      </div>
+      <div class="single-menu">
         <?php wpeHeadNav(); ?>
-      </nav><!-- /nav -->
-
-    </div><!-- /.inner -->
-  </header><!-- /header -->
-
-  <section role="main">
-    <div class="inner">
+      </div>
+      <div class="clear-device"></div>
+    </div>
+    <!-- end header -->
+    <div class="clear"></div>
