@@ -53,7 +53,37 @@
   list-style: none;
 }
 .homepage .the-best .rest a {
+  overflow: hidden;
+
   width: 295px;
   height: 192px;
+}
+.homepage .category .rest a {
   overflow: hidden;
+
+  width: 295px;
+  height: 192px;
+}
+.pagination {
+  text-align: center;
+  span,
+  a {
+    display: inline-block;
+
+    padding: 4px 5px;
+  }
+}
+.category .homepage-content .cat-img {
+  img {
+    width: 100%;
+    min-height: 100%;
+  }
+  overflow: hidden;
+}
+.widget {
+  &.popular {
+    ul {
+      padding: 0;
+    }
+  }
 }
